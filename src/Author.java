@@ -20,11 +20,13 @@ public class Author {
         return "Name = " + firstName + " " + lastName;
     }
 
-    public boolean equals(Author other) {
+    @Override
+    public boolean equals(Object other) {
         if (this.getClass() != other.getClass()) {
             return false;
         }
-        return this.firstName.equals(other.firstName) && this.lastName.equals(other.lastName);
+        Author otherAuthor = (Author) other;
+        return this.firstName.equals(otherAuthor.firstName) && this.lastName.equals(otherAuthor.lastName);
     }
 
     @Override
